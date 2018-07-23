@@ -7,8 +7,8 @@ const EC = protractor.ExpectedConditions;
 class CarsPage extends BasePage {
     constructor() {
         super();
-        this.searchResultInfo = element(by.css('#ct-search-results [availability-info]'));
-        // this.searchResultInfo = element(by.css('.ct-search-form-readonly'));
+        // this.searchResultInfo = element(by.css('#ct-search-results [availability-info]'));
+        this.searchResultInfo = element(by.css('.ct-search-form-readonly'));
     }
 
     getResultInfo() {

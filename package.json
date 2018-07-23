@@ -9,7 +9,7 @@
   "scripts": {
     "prestart-webdriver": "webdriver-manager update",
     "start-webdriver": "webdriver-manager start",
-    "cucumber": "protractor ./test/config/conf.js --disableChecks 250"
+    "cucumber-test": "protractor ./test/config/conf.js --disableChecks 250"
   },
   "repository": {
     "type": "git",

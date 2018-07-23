@@ -17,7 +17,10 @@ When('I perform a search cars for rent with next filters: location - {string}, d
             return carsPage.getResultInfo();
         })
         .then((resultInfo) => {
-            return expect(resultInfo).to.have.string('cars available in ' + location);
-            // return expect(resultInfo).to.include.all.strings(location,'26 Jul', '00:00', '31 Jul', '01:00');
+            return expect(resultInfo).to.have.string(location)
+                .and.to.have.string('26 Jul')
+                .and.to.have.string('00:00')
+                .and.to.have.string('31 Jul')
+                .and.to.have.string('01:00');
         })
 });
