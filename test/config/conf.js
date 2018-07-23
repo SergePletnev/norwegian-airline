@@ -3,8 +3,6 @@
 const path = require('path');
 
 exports.config = {
-    // allScriptsTimeout: 200000,
-    // getPageTimeout: 60 * 1000,
     seleniumAddress: 'http://localhost:4444/wd/hub',
 
     framework: 'custom',
@@ -23,7 +21,7 @@ exports.config = {
     specs: [path.resolve('./test/features/*.feature')],
     onPrepare: () => {
         browser.driver.manage().timeouts().implicitlyWait(20000);
-        // browser.waitForAngularEnabled(true);
+        browser.waitForAngularEnabled(true);
         browser.manage().window().maximize();
     }
 };

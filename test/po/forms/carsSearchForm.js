@@ -5,7 +5,7 @@ class CarsSearchForm {
         this.carsSearchLink = element(by.linkText('Car rentals'));
         this.locationInput = element(by.id('pickup_location'));
         this.dateFromLink = element(by.xpath('/html[1]/body[1]/main[1]/div[4]/div[1]/div[2]/div[4]/div[1]/div[1]/form[1]/fieldset[3]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[5]/td[4]/button[1]'));
-        // this.dateFromLink = element(by.buttonText('26'));
+        // this.dateFromLink = element(by.xpath('(//*[@ng-switch="datepickerMode"])[1]//span[contains(text(), "26") and not(@class="text-muted")]'));
         this.timeFromLink = element(by.css('#pickupTime-00\\3a 00'));
         this.calendarToInput = element(by.css('.form-split>:nth-child(2) .calendar__input'));
         this.dateToLink = element(by.xpath('/html[1]/body[1]/main[1]/div[4]/div[1]/div[2]/div[4]/div[1]/div[1]/form[1]/fieldset[3]/div[1]/section[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[6]/td[2]/button[1]'));
