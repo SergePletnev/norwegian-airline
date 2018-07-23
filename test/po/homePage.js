@@ -3,6 +3,7 @@
 const BasePage = require('./basePage');
 const CarsSearchForm = require('./forms/carsSearchForm');
 const FlightsSearchForm = require('./forms/flightsSearchForm');
+const provider = require('./pageObjectProvider');
 
 class HomePage extends BasePage {
     constructor() {
@@ -12,7 +13,10 @@ class HomePage extends BasePage {
     }
 
     searchCarsForRent(location) {
-        return this.carsSearchForm.searchCarsForRent(location);
+        return this.carsSearchForm.searchCarsForRent(location)
+            .then(() => {
+                return provider.getPageObject('cars');
+            })
     }
 }
 

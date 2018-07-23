@@ -9,9 +9,9 @@ class FlightSearchForm {
 
     searchFlights(departureLocation, destinationLocation) {
 
-        .then(() => {
-            return provider.getPageObject('flights');
-        })
+        // .then(() => {
+        //     return provider.getPageObject('flights');
+        // })
     }
 }
 

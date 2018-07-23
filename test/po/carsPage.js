@@ -2,15 +2,22 @@
 
 const BasePage = require('./basePage');
 
+const EC = protractor.ExpectedConditions;
+
 class CarsPage extends BasePage {
     constructor() {
         super();
         this.searchResultInfo = element(by.css('#ct-search-results [availability-info]'));
+        // this.searchResultInfo = element(by.css('.ct-search-form-readonly'));
     }
 
     getResultInfo() {
-        return this.searchResultInfo.getText();
+        return browser.wait(EC.presenceOf(this.searchResultInfo, 10000))
+            .then(() => {
+                return this.searchResultInfo.getText();
+            });
     }
+
 }
 
 module.exports = new CarsPage();

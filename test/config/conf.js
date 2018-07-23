@@ -22,7 +22,7 @@ exports.config = {
 
     specs: [path.resolve('./test/features/*.feature')],
     onPrepare: () => {
-        // browser.driver.manage().timeouts().implicitlyWait(20000);
+        browser.driver.manage().timeouts().implicitlyWait(20000);
         // browser.waitForAngularEnabled(true);
         browser.manage().window().maximize();
     }
