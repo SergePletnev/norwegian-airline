@@ -6,12 +6,12 @@ const provider = require('./../po/pageObjectProvider');
 const homePage = require('./../po/homePage');
 const carsPage = require('./../po/carsPage');
 
-When('I perform a cars search for rent with next filters: location - {string}, date from - 26 July 00:00, date till - 31 July 01:00'
+When(/^I perform a cars search for rent with next filters: location - "([^"]*)", date from - 26 July 00:00, date till - 31 July 01:00$/
     , (location) => {
         return homePage.searchCarsForRent(location)
     });
 
-Then('I should see cars to rent in {string} with required filters information', (location) => {
+Then(/^I should see cars to rent in "([^"]*)" with required filters information$/, (location) => {
     return carsPage.getResultInfo()
         .then((resultInfo) => {
             return expect(resultInfo).to.have.string(location)

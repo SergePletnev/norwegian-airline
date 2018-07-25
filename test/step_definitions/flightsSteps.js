@@ -6,12 +6,12 @@ const provider = require('./../po/pageObjectProvider');
 const homePage = require('./../po/homePage');
 const flightsPage = require('./../po/flightsPage');
 
-When('I perform a flights search from {string} to {string} in next dates: departure - 26 July, return - 31 July'
+When(/^I perform a flights search from "([^"]*)" to "([^"]*)" in next dates: departure - 26 July, return - 31 July$/
     , (departureLocation, destinationLocation) => {
         return homePage.searchFlights(departureLocation, destinationLocation);
     });
 
-Then('I should see flights from {string} to {string} and back in required dates', (departureLocation, destinationLocation) => {
+Then(/^I should see flights from "([^"]*)" to "([^"]*)" and back in required dates$/, (departureLocation, destinationLocation) => {
     return flightsPage.getOutboundInfo()
         .then((outboundInfo) => {
             return expect(outboundInfo).to.have.string(departureLocation)
