@@ -1,4 +1,4 @@
-"use strict";
+"use strict"
 
 const { Then, When } = require('cucumber');
 const expect = require('chai').expect;
