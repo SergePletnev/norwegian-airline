@@ -20,8 +20,8 @@ class HomePage extends BasePage {
             });
     }
 
-    searchFlights(departureLocation, destinationLocation) {
-        return this.flightsSearchForm.searchFlights(departureLocation, destinationLocation)
+    searchFlights(departureLocation, destinationLocation, departureDate, returnDate) {
+        return this.flightsSearchForm.searchFlights(departureLocation, destinationLocation, departureDate, returnDate)
             .then(() => {
                 return provider.getPageObject('flights');
             });
