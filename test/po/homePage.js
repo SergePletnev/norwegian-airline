@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const BasePage = require('./basePage');
 const CarsSearchForm = require('./forms/carsSearchForm');
@@ -13,8 +13,8 @@ class HomePage extends BasePage {
         this.flightsSearchForm = new FlightsSearchForm();
     }
 
-    searchCarsForRent(location) {
-        return this.carsSearchForm.searchCarsForRent(location)
+    searchCarsForRent(location, dateRentFrom, dateRentTo) {
+        return this.carsSearchForm.searchCarsForRent(location, dateRentFrom, dateRentTo)
             .then(() => {
                 return provider.getPageObject('cars');
             });

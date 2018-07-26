@@ -9,7 +9,8 @@
   "scripts": {
     "prestart-webdriver": "webdriver-manager update",
     "start-webdriver": "webdriver-manager start",
-    "protractor": "protractor ./test/config/conf.js --disableChecks 250"
+    "protractor": "protractor ./test/config/conf.js --disableChecks 250",
+    "eslint": "./node_modules/.bin/eslint **/*.js"
   },
   "repository": {
     "type": "git",

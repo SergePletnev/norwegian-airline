@@ -12,9 +12,9 @@ exports.config = {
     },
 
     capabilities: {
-        'browserName': 'chrome',
-        'chromeOptions': {
-            'args': ['disable-infobars']
+        browserName: 'chrome',
+        chromeOptions: {
+            args: ['disable-infobars']
         }
     },
 

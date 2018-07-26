@@ -1,6 +1,4 @@
-'use strict'
-
-const EC = protractor.ExpectedConditions;
+'use strict';
 
 class FlightSearchForm {
     constructor() {
@@ -26,7 +24,7 @@ class FlightSearchForm {
             .then(() => this.searchButton.click())
             .then(() => {
                 browser.ignoreSynchronization = true;
-            })
+            });
     }
 }
 

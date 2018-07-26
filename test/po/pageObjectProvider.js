@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const PAGE_OBJECTS = {
     home: './homePage',
@@ -8,4 +8,4 @@ const PAGE_OBJECTS = {
 
 module.exports.getPageObject = (pageName) => {
     return require(PAGE_OBJECTS[pageName]);
-}; 
+};
