@@ -127,7 +127,7 @@ module.exports = {
       "no-trailing-spaces": 1,
       "no-underscore-dangle": 2,
       "no-unneeded-ternary": 2,
-      "object-curly-spacing": [1, "never"],
+      "object-curly-spacing": [1, "always"],
       "operator-assignment": [1, "always"],
       "operator-linebreak": [1, "after"],
       "padded-blocks": [0, "always"],
