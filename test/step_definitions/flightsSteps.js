@@ -1,6 +1,6 @@
 "use strict";
 
-const {Then, When} = require('cucumber');
+const { Then, When } = require('cucumber');
 const expect = require('chai').expect;
 const homePage = require('./../po/homePage');
 const flightsPage = require('./../po/flightsPage');

@@ -1,6 +1,7 @@
 "use strict";
 
-const {Given, Then, setDefaultTimeout} = require('cucumber');
+const { Given, Then } = require('cucumber');
+const setDefaultTimeout = require('cucumber');
 const expect = require('chai').expect;
 const provider = require('./../po/pageObjectProvider');
 

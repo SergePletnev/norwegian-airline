@@ -6,6 +6,8 @@ gulp.task("start", () => {
         .pipe(protractor({
             configFile: "./test/config/conf.js"
         }))
-        .on('error', (er) => { throw er; })
+        .on('error', (er) => {
+            throw er;
+        });
 }
 );
