@@ -6,6 +6,7 @@ const gulp = require('gulp');
 const protractor = require("gulp-protractor").protractor;
 const runSequence = require('run-sequence').use(gulp);
 const shell = require('gulp-shell');
+const wait = require('gulp-wait');
 
 gulp.task('eslint', () => {
     logger.info('Checking and fixing code by eslinter');
@@ -15,15 +16,13 @@ gulp.task('eslint', () => {
         ]));
 });
 
-gulp.task('start-webdriver', (done) => {
+gulp.task('start-webdriver', () => {
     logger.info('Starting webdriver');
     gulp.src('*.js', { read: false })
         .pipe(shell([
             'start cmd /k "node_modules\\.bin\\webdriver-manager start"'
-        ]));
-    setTimeout(() => {
-        done();
-    }, 7000);
+        ]))
+        .pipe(wait(6000))
 });
 
 gulp.task('run-test', () => {
