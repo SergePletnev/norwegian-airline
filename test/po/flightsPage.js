@@ -1,5 +1,8 @@
 'use strict';
 
+/* global helper */
+
+const logger = require('./../../support/logger').logger;
 const BasePage = require('./basePage');
 
 class FlightsPage extends BasePage {
@@ -10,11 +13,13 @@ class FlightsPage extends BasePage {
     }
 
     getOutboundInfo() {
-        return this.outboundInfo.getText();
+        logger.info('Getting outbound info');
+        return helper.getTextOf(this.outboundInfo);
     }
 
     getReturnInfo() {
-        return this.inboundInfo.getText();
+        logger.info('Getting return info');
+        return helper.getTextOf(this.outboundInfo);
     }
 }
 

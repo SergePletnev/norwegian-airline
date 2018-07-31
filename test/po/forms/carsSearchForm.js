@@ -1,5 +1,7 @@
 'use strict';
 
+/* global helper */
+
 class CarsSearchForm {
     constructor() {
         this.carsSearchLink = element(by.linkText('Car rentals'));
@@ -13,21 +15,20 @@ class CarsSearchForm {
     }
 
     searchCarsForRent(location, dateRentFrom, dateRentTo) {
-        return this.carsSearchLink.click()
-            .then(() => this.locationInput.clear())
-            .then(() => this.locationInput.sendKeys(location))
+        return helper.clickElement(this.carsSearchLink)
+            .then(() => helper.setElementClear(this.locationInput))
+            .then(() => helper.writeTo(this.locationInput, location))
             .then(() => this.locationInput.sendKeys(protractor.Key.ENTER))
-            .then(() => this.datesFromRentLink.get(dateRentFrom - 1).click())
-            .then(() => this.timeFromLink.click())
-            .then(() => this.calendarToInput.click())
-            .then(() => this.dateRentToLink.get(dateRentTo - 1).click())
-            .then(() => this.timeToLink.click())
-            .then(() => this.searchButton.click())
+            .then(() => helper.clickElement(this.datesFromRentLink.get(dateRentFrom - 1)))
+            .then(() => helper.clickElement(this.timeFromLink))
+            .then(() => helper.clickElement(this.calendarToInput))
+            .then(() => helper.clickElement(this.dateRentToLink.get(dateRentTo - 1)))
+            .then(() => helper.clickElement(this.timeToLink))
+            .then(() => helper.clickElement(this.searchButton))
             .then(() => {
                 browser.ignoreSynchronization = true;
             });
     }
-
 }
 
 module.exports = CarsSearchForm;

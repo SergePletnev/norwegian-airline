@@ -1,5 +1,6 @@
 'use strict';
 
+const logger = require('./../../support/logger').logger;
 const BasePage = require('./basePage');
 const CarsSearchForm = require('./forms/carsSearchForm');
 const FlightsSearchForm = require('./forms/flightsSearchForm');
@@ -14,6 +15,7 @@ class HomePage extends BasePage {
     }
 
     searchCarsForRent(location, dateRentFrom, dateRentTo) {
+        logger.info(`Searching cars for rent in ${location} from ${dateRentFrom} August till ${dateRentTo} August`);
         return this.carsSearchForm.searchCarsForRent(location, dateRentFrom, dateRentTo)
             .then(() => {
                 return provider.getPageObject('cars');
@@ -21,6 +23,7 @@ class HomePage extends BasePage {
     }
 
     searchFlights(departureLocation, destinationLocation, departureDate, returnDate) {
+        logger.info(`Searching flights from ${departureLocation} to ${destinationLocation}: departure - ${departureDate} August, return - ${returnDate} August`);
         return this.flightsSearchForm.searchFlights(departureLocation, destinationLocation, departureDate, returnDate)
             .then(() => {
                 return provider.getPageObject('flights');

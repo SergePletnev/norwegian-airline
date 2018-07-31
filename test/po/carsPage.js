@@ -1,8 +1,9 @@
 'use strict';
 
-const BasePage = require('./basePage');
+/* global helper */
 
-const EC = protractor.ExpectedConditions;
+const logger = require('./../../support/logger').logger;
+const BasePage = require('./basePage');
 
 class CarsPage extends BasePage {
     constructor() {
@@ -11,7 +12,8 @@ class CarsPage extends BasePage {
     }
 
     getResultInfo() {
-        return browser.wait(EC.presenceOf(this.searchResultInfo, 10000))
+        logger.info('Getting result info of car searching');
+        return helper.waitForVisibilityOf(this.searchResultInfo, 10000)
             .then(() => {
                 return this.searchResultInfo.getText();
             });

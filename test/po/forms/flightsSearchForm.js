@@ -1,5 +1,7 @@
 'use strict';
 
+/* global helper */
+
 class FlightSearchForm {
     constructor() {
         this.departureLocationInput = element(by.id('airport-select-origin'));
@@ -11,16 +13,17 @@ class FlightSearchForm {
     }
 
     searchFlights(departureLocation, destinationLocation, departureDate, returnDate) {
-        return this.departureLocationInput.clear()
-            .then(() => this.departureLocationInput.sendKeys(departureLocation))
+        return helper.clickElement(this.departureLocationInput)
+            .then(() => helper.setElementClear(this.departureLocationInput))
+            .then(() => helper.writeTo(this.departureLocationInput, destinationLocation))
             .then(() => this.departureLocationInput.sendKeys(protractor.Key.ENTER))
-            .then(() => this.destinationLocationInput.clear())
-            .then(() => this.destinationLocationInput.sendKeys(destinationLocation))
+            .then(() => helper.setElementClear(this.destinationLocationInput))
+            .then(() => helper.writeTo(this.destinationLocationInput, departureLocation))
             .then(() => this.destinationLocationInput.sendKeys(protractor.Key.ENTER))
-            .then(() => this.calendarDeparture.click())
-            .then(() => this.departureDatesLink.get(departureDate - 1).click())
-            .then(() => this.returnDatesLink.get(returnDate - 1).click())
-            .then(() => this.searchButton.click())
+            .then(() => helper.clickElement(this.calendarDeparture))
+            .then(() => helper.clickElement(this.departureDatesLink.get(departureDate - 1)))
+            .then(() => helper.clickElement(this.returnDatesLink.get(returnDate - 1)))
+            .then(() => helper.clickElement(this.searchButton))
             .then(() => {
                 browser.ignoreSynchronization = true;
             });
