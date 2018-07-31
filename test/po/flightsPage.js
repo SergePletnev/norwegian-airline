@@ -19,7 +19,7 @@ class FlightsPage extends BasePage {
 
     getReturnInfo() {
         logger.info('Getting return info');
-        return helper.getTextOf(this.outboundInfo);
+        return helper.getTextOf(this.inboundInfo);
     }
 }
 

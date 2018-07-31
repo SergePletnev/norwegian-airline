@@ -10,7 +10,7 @@
     "postinstall": "mkdir logs && mkdir reports",
     "prestart-webdriver": "webdriver-manager update",
     "start-webdriver": "webdriver-manager start",
-    "protractor": "protractor ./test/config/conf.js --disableChecks 250",
+    "protractor": "protractor ./test/config/conf.js --disableChecks 500",
     "gulp": "node ./node_modules/gulp/bin/gulp",
     "eslint": "./node_modules/.bin/eslint **/*.js",
     "generate-report": "node ./support/reporter.js"

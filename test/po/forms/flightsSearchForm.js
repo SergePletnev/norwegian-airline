@@ -15,10 +15,10 @@ class FlightSearchForm {
     searchFlights(departureLocation, destinationLocation, departureDate, returnDate) {
         return helper.clickElement(this.departureLocationInput)
             .then(() => helper.setElementClear(this.departureLocationInput))
-            .then(() => helper.writeTo(this.departureLocationInput, destinationLocation))
+            .then(() => helper.writeTo(this.departureLocationInput, departureLocation))
             .then(() => this.departureLocationInput.sendKeys(protractor.Key.ENTER))
             .then(() => helper.setElementClear(this.destinationLocationInput))
-            .then(() => helper.writeTo(this.destinationLocationInput, departureLocation))
+            .then(() => helper.writeTo(this.destinationLocationInput, destinationLocation))
             .then(() => this.destinationLocationInput.sendKeys(protractor.Key.ENTER))
             .then(() => helper.clickElement(this.calendarDeparture))
             .then(() => helper.clickElement(this.departureDatesLink.get(departureDate - 1)))
