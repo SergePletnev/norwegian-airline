@@ -19,11 +19,11 @@ gulp.task('start-webdriver', (done) => {
     logger.info('Starting webdriver');
     gulp.src('*.js', { read: false })
         .pipe(shell([
-            'npm run start-webdriver'
+            'start cmd /k "node_modules\\.bin\\webdriver-manager start"'
         ]));
     setTimeout(() => {
         done();
-    }, 12000);
+    }, 7000);
 });
 
 gulp.task('run-test', () => {
