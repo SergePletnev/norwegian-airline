@@ -23,7 +23,7 @@ gulp.task('start-webdriver', (done) => {
         ]));
     setTimeout(() => {
         done();
-    }, 7000);
+    }, 12000);
 });
 
 gulp.task('run-test', () => {
