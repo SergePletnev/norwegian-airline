@@ -7,11 +7,13 @@
     "test": "test"
   },
   "scripts": {
+    "postinstall": "mkdir logs && mkdir reports",
     "prestart-webdriver": "webdriver-manager update",
     "start-webdriver": "webdriver-manager start",
     "protractor": "protractor ./test/config/conf.js --disableChecks 250",
-    "gulp": "node ./node_modules/gulp/bin/gulp start",
-    "eslint": "./node_modules/.bin/eslint **/*.js"
+    "gulp": "node ./node_modules/gulp/bin/gulp",
+    "eslint": "./node_modules/.bin/eslint **/*.js",
+    "generate-report": "node ./support/reporter.js"
   },
   "repository": {
     "type": "git",
@@ -28,12 +30,14 @@
     "ajv": "^6.5.2",
     "chai": "^4.1.2",
     "cucumber": "^4.2.1",
-    "gulp": "^3.9.1",
-    "gulp-cli": "^2.0.1",
+    "cucumber-html-reporter": "^4.0.3",
+    "gulp": "^4.0.0",
     "gulp-protractor": "*",
+    "gulp-shell": "^0.6.5",
     "path": "^0.12.7",
     "protractor": "^5.4.0",
-    "protractor-cucumber-framework": "^6.0.0"
+    "protractor-cucumber-framework": "^6.0.0",
+    "winston": "^3.0.0"
   },
   "devDependencies": {
     "eslint": "^5.2.0"

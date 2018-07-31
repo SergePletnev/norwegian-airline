@@ -8,7 +8,7 @@ module.exports = {
     },
     "extends": "eslint:recommended",
     "parserOptions": {
-        "ecmaVersion": 2015,
+        "ecmaVersion": 2017,
         "sourceType": "module"
     },
     "rules": {
@@ -107,7 +107,7 @@ module.exports = {
         "allowArrayStart": false,
         "allowArrayEnd": true }],
       "max-depth": [1, 3],
-      "max-len" : [1, 140, 4],
+      "max-len" : [1, 180, 4],
       "max-params": [1, 10],
       "new-parens": 2,
       "newline-after-var": 0,

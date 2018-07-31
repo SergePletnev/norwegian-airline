@@ -8,7 +8,8 @@ exports.config = {
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
     cucumberOpts: {
-        require: [path.resolve('./test/step_definitions/*.js')]
+        require: [path.resolve('./test/step_definitions/*.js')],
+        format: 'json:./reports/report.json'
     },
 
     capabilities: {
