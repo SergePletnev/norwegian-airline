@@ -6,6 +6,9 @@
 !.vscode/extensions.json
 .history
 
+*.log
+*.html
+
 ### Node.s ###
 node_modules/
 
