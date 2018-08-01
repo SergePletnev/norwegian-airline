@@ -4,7 +4,6 @@ const logger = require('./support/logger').logger;
 
 const gulp = require('gulp');
 const protractor = require("gulp-protractor").protractor;
-const runSequence = require('run-sequence').use(gulp);
 const shell = require('gulp-shell');
 
 gulp.task('eslint', () => {
@@ -23,7 +22,7 @@ gulp.task('start-webdriver', (done) => {
         ]));
     setTimeout(() => {
         done();
-    }, 7000);
+    }, 10000);
 });
 
 gulp.task('run-test', () => {
@@ -34,7 +33,7 @@ gulp.task('run-test', () => {
         }))
         .on('error', (er) => {
             logger.error('Error, Tests Failed!', er);
-            runSequence('generate-report');
+            gulp.series('generate-report');
         });
 });
 
@@ -46,6 +45,4 @@ gulp.task('generate-report', () => {
         ]));
 });
 
-gulp.task('default', () => {
-    runSequence('start-webdriver', 'run-test', 'generate-report');
-});
+gulp.task('default', gulp.series('start-webdriver', 'run-test', 'generate-report'));
