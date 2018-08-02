@@ -15,6 +15,9 @@ const logger = winston.createLogger({
             name: 'error-log',
             filename: path.resolve('./logs/error.log'),
             level: 'error'
+        }),
+        new (winston.transports.Console)({
+            colorize: true
         })
     ]
 });
