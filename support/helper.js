@@ -15,8 +15,8 @@ class Helper {
     }
 
     waitForVisibilityOf(element, timeout) {
-        logger.info(`Wait [${timeout}ms] for visibility of element with locator: ${element.locator().value}`);
         const timeoutMs = timeout || browser.params.defaultTimeOut;
+        logger.info(`Wait [${timeoutMs}ms] for visibility of element with locator: ${element.locator().value}`);
         return browser.wait(protractor.ExpectedConditions.visibilityOf(element), timeoutMs,
             `Waiting for visibilityOf of ${element.locator()} failed`);
     }
