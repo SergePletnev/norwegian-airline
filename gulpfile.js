@@ -15,6 +15,17 @@ gulp.task('eslint', () => {
         ]));
 });
 
+gulp.task('update-webdriver', (done) => {
+    logger.info('Updating webdriver');
+    gulp.src('*.js', { read: false })
+        .pipe(shell([
+            'start cmd /k "node_modules\\.bin\\webdriver-manager update"'
+        ]));
+    setTimeout(() => {
+        done();
+    }, 7000);
+});
+
 gulp.task('start-webdriver', (done) => {
     logger.info('Starting webdriver');
     gulp.src('*.js', { read: false })
@@ -47,5 +58,5 @@ gulp.task('generate-report', () => {
 });
 
 gulp.task('default', () => {
-    runSequence('start-webdriver', 'run-test', 'generate-report');
+    runSequence('update-webdriver', 'start-webdriver', 'run-test', 'generate-report');
 });
