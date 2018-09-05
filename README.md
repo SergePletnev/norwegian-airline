@@ -1,5 +1,5 @@
-# norwegian-airline
-Norwegian airline tests with protractor-cucumber
+## Norwegian airline testing ([https://www.norwegian.com](https://www.norwegian.com))
+Norwegian airline testing using protractor-cucumber
 
 ### Deploy
 #### $ npm install
